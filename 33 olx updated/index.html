@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../assets/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/fontawesome.min.css"> -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+
+        <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAg763RIWaRYAtm79wMo9H3gmZMWNG5iPM",
+            authDomain: "fire-test-learn.firebaseapp.com",
+            databaseURL: "https://fire-test-learn.firebaseio.com",
+            projectId: "fire-test-learn",
+            storageBucket: "fire-test-learn.appspot.com",
+            messagingSenderId: "143131765238"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="main">
+        <div class="center">
+            <div class="header">
+                <div class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Logo_of_OLX.svg" alt="">
+                </div>
+                <span class="heading">
+                    <span class="pk">Pakistan's</span> Largest Market place</span>
+                <div class="accnt">
+                    <button class="user-link btn btn-outline-secondary">
+                        <i class="fas fa-user"> &nbsp;</i>My account</button> &nbsp;
+                    <a href="post.html"> <button type="button" class="btn btn-lg btn-warning btn-ad">Submit Ad</button></a>
+                </div>
+                <!-- <div class="adbtn"><button type="button" class="btn btn-secondary">Submit Ad</button> -->
+                <!-- </div> -->
+            </div>
+
+            <!-- login here -->
+            <div class="loginDiv">
+                <div class="fb">
+                    <a href="" class="lnk">
+                        <span class="ico">
+                            <i class="fab fa-facebook-square"></i>
+                        </span>
+                    </a>
+                </div>
+                <div class="ggle">
+                    <a href="" class="lnk">
+                        <span class="ico">
+                            <i class="fab fa-google-plus"></i>
+                        </span>
+                    </a>
+                </div>
+                <button id="ggl">Login</button>
+                <button id="signOut">signOut</button>
+            </div>
+
+            <!-- login here end -->
+
+
+
+            <div class="search">
+                <div class="row">
+                    <div class="col-4">
+                        <!-- <input type="text" name="search" class="form-control loc-bg" placeholder="Location" class=""> -->
+                        <select class="form-control loc-bg location-ad" name="location" id="loc">
+                            <option value="All cities">All cities</option>
+                            <option value="Karachi">Karachi</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Peshawar">Peshawar</option>
+                            <option value="Quetta">Quetta</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" name="search" class="form-control search-bg search-bar-ad" placeholder="Search here.." class="">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-search btn-primary search-ad">
+                            <i class="fas fa-search"></i> Search</button>
+                    </div>
+                </div>
+            </div>
+            <!-- search ended here-->
+
+
+
+
+
+            <div class="mid">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <a onclick="SetData('Properties')" href="ads.html" id="Properties">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-home"></i>
+                                </div>
+                                <div class="name">Properties</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Vehicles')" href="ads.html" id="Vehicles">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-car"></i>
+                                </div>
+                                <div class="name">Vehicles</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Bikes')" href="ads.html" id="Bikes">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-motorcycle"></i>
+                                </div>
+                                <div class="name">Bikes</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Electronics')" href="ads.html" id="Electronics">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-tv"></i>
+                                </div>
+                                <div class="name">Electronics</div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a onclick="SetData('Mobiles')" href="ads.html" id="Mobiles">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-mobile-alt"></i>
+                                </div>
+                                <div class="name">Mobiles</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Jobs')" href="ads.html" id="Jobs">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-briefcase"></i>
+                                </div>
+                                <div class="name">Jobs</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Services')" href="ads.html" id="Services">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-wrench"></i>
+                                </div>
+                                <div class="name">Services</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Furniture')" href="ads.html" id="Furniture">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-couch"></i>
+                                </div>
+                                <div class="name">Furniture</div>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a onclick="SetData('Pets')" href="ads.html" id="Pets">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-paw"></i>
+                                </div>
+                                <div class="name">Pets</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Books and Sports')" href="ads.html" id="Books and Sports">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-graduation-cap"></i>
+                                </div>
+                                <div class="name">Books &amp; Sports</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Fashion')" href="ads.html" id="Fashion">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-tshirt"></i>
+                                </div>
+                                <div class="name">Fashion</div>
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="SetData('Others')" href="ads.html" id="Others">
+                                <div class="pic">
+                                    <i class="fas fa-7x fa-question"></i>
+                                </div>
+                                <div class="name">Others</div>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+        </div>
+
+        <footer class="footer-basic-centered">
+
+            <!-- <p class="footer-company-motto">Created by</p> -->
+
+            <!-- <p class="footer-links">
+                <a href="#">Home</a>
+                ·
+                <a href="#">Blog</a>
+                ·
+                <a href="#">Pricing</a>
+                ·
+                <a href="#">About</a>
+                ·
+                <a href="#">Faq</a>
+                ·
+                <a href="https://www.facebook.com/nabeel.imran.12382">Connect</a>
+            </p> -->
+
+            <a href="https://www.facebook.com/nabeel.imran.12382">
+                <p class="footer-company-name">
+                    <i class="fab fa-facebook fa-2x"></i> The PaJee's &copy; 2018</p>
+            </a>
+        </footer>
+
+    </div>
+
+
+
+
+
+
+
+<script src="main.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
+</body>
+
+</html>

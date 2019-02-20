@@ -1,0 +1,23 @@
+input[type=checkbox] {
+  position: absolute;
+  left: -100vw;
+}
+input[type=checkbox]:checked + label {
+  color: #e2264d;
+  will-change: font-size;
+  animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+
+label {
+  align-self: center;
+  color: #aab8c2;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+@keyframes heart {
+  0%, 15% {
+    font-size: 0;
+  }
+}
+

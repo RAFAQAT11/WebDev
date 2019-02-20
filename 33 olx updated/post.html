@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../assets/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="assets/css/ad.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+
+        <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAg763RIWaRYAtm79wMo9H3gmZMWNG5iPM",
+            authDomain: "fire-test-learn.firebaseapp.com",
+            databaseURL: "https://fire-test-learn.firebaseio.com",
+            projectId: "fire-test-learn",
+            storageBucket: "fire-test-learn.appspot.com",
+            messagingSenderId: "143131765238"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+
+
+
+    <div class="main">
+        <div class="center">
+            <div class="header">
+                <div class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Logo_of_OLX.svg" alt="">
+                </div>
+                <span class="heading">
+                    <span class="pk">Pakistan's</span> Largest Market place</span>
+                <div class="accnt">
+                    <a class="user-link" href="#">
+                        <i class="fas fa-user"> &nbsp;</i>My account</a> &nbsp;
+                    <button type="button" class="btn btn-lg btn-warning btn-ad">Submit Ad</button>
+                </div>
+                <!-- <div class="adbtn"><button type="button" class="btn btn-secondary">Submit Ad</button> -->
+                <!-- </div> -->
+            </div>
+
+
+
+
+            <!-- <div class="search">
+                <div class="row">
+                    <div class="col-4">
+                        <input type="text" name="search" class="form-control loc-bg" placeholder="Location" class="">
+                    </div>
+                    <div class="col-6">
+                        <input type="text" name="search" class="form-control search-bg" placeholder="Search here.." class="">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-search btn-primary">
+                            <i class="fas fa-search"></i> Search</button>
+                    </div>
+                </div>
+            </div> -->
+            <!-- search ended here-->
+
+
+
+
+
+            <div class="mid">
+                <Div class="adBody">
+                    <div class="adTitle ">
+                        <h3>Submit an Ad</h3>
+                    </div>
+                    <div class="adBasicInfo adContent">
+                        <div class="titleAd inter">
+                            <div class="adRight">
+                                <label for="">Ad Title
+                                    <span class="red">*</span>
+                                </label>
+                            </div>
+                            <div class="adLeft">
+                                <input type="text" name="" id="title-ad">
+                            </div>
+                        </div>
+                        <div class="category inter">
+                            <div class="adRight">
+                                <label for="">Category
+                                    <span class="red">*</span>
+                                </label>
+                            </div>
+                            <div class="adLeft">
+                                <select name="" id="select-ad" class="cat">
+                                    <option value="Properties">Properties</option>
+                                    <option value="Vehicles">Vehicles</option>
+                                    <option value="Bikes">Bikes</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Mobiles">Mobiles</option>
+                                    <option value="Jobs">Jobs</option>
+                                    <option value="Services">Services</option>
+                                    <option value="Furniture">Furniture</option>
+                                    <option value="Pets">Pets</option>
+                                    <option value="Books">Books and Sports</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="discription adContent">
+                        <div class="price inter">
+                            <div class="adRight">
+                                <label>Price
+                                    <span class="red">*</span>
+                                </label>
+                            </div>
+                            <div class="adLeft">
+                                <input type="text" name="" id="price-ad">
+                            </div>
+                        </div>
+                        <div class="dis interContent inter space desc">
+                            <div class="adRight">
+                                <label for="" class="topAd">Ad Description
+                                    <span class="red">*</span>
+                                </label>
+                            </div>
+                            <div class="adLeft">
+                                <textarea name="" id="textarea-ad" cols="30" rows="10"></textarea>
+
+                            </div>
+                        </div>
+
+
+                        <div class="dis interContent inter">
+                            <div class="adRight">
+                                <label for="" class="topAd">Updload Photo
+                                    <span class="red">*</span>
+                                </label>
+
+                            </div>
+                            <div class="adLeft">
+                                <a href="#" id="upp">
+
+                                    <img class="upPhoto" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///9CwPs7vvvw+v9/0/xGwvuz5P3q+P6n3v1Pxfvj9f/N7f530Pxuzvye3v02vfteyfuo4v3T7/74/f/l9v/I7P7b8v6/6f7R7/5PxPuU2v1byPyH1vzu+f/D6v5yz/z/kkeVAAAGl0lEQVR4nO2d63qiMBBAMeEiKhcNogLa93/LBVpbCdRCMmECO+dndz/IMZCBZJg4DgEKrxHYjTDI7lJUVXHcB9gNMQT3o4TVJBt3v8p+3FUe23zCwi3Hbg48p2jzSnHHbhA0+5J1DDfVynrxspEEN+xjVYp+sunBovVcqMLv+7WKGXbLgOBHb9CwvlBz7LaBwOPbsGDNKhRF/EsPtkTLVxTFG7+adPGKlRwl5HuxXLaiqAbChKQYnrBbqQH/qweXrhj8cQ8+FdM9dksVyapRgo3iGbutSgRjBWsWqXh338VBmXJ5iuIwYpB5uVBvS1MU0STBWnHzwG7zJAJ3omCNt6RezNzJfk1cfCxmfiqrpgwyP5SXhSiqCtbPqMtQDCaFCbkXsVs/AqFyD35zs39EnRwmZGzvxfu0QL88xUwhDsp4vsXDzU51FO0Q2quoHCYkSlsVM40wsQhFrhUmutxsHG74h/4g84PnY/v0AAgTHZhtihBhootlQWP0pNMErAoaMHFQxqIRFSoOWqt4BwwTXUI7ggYHHkVfsSJowMbBHviK8GGii4c9sWEiTHRBDhpmwkQX1BHVVJiwRjGYRbC5UJEEueFB5gekoMF1Z9WmgKGosviijjf/0435MNGB3eaOi3OEiS4zr2nM3IPzK05JQoBUnE1Qb/FFndlm4CYmIcDBZhpR5wv0fbw5Ft9w7sEvWGheMSjmDhNdReMjKrJgTWr2XryjCxrOgRMWCNZx0VyyphiTEGseFprqRVFYIWhOkdsi2CiauFD52+8mZsZE4vS7L18wiKAV+dYuwVrxCioofvs4CxHYD4p8+wTre3EHKGjNKPoKoOLDwh5sAPtE8yx/pGwN7ADSi9fo71OhUQH0Yn7AtnhLoV2Bgo/7OguPWPejdxvjRAfdVZsstXWUecI+9K7Tk+1dWHei3rNNHlrfh6GeofDLpqQMtsYvNE0rj5qTb+Iau1GalmUZ1njftEdvyum0mPkJngf/ZPNzcq9pS1mmaeRur/qzi4IHwW6XPzm1XK/7V8yElKJzjuv189TfLcl3WXCfaz3KSEyxIuXrCRmSIRniQ4ZkSIb4kCEZkiE+ZEiGZIgPGZIhGeJDhmRIhviQIRmSIT5kSIZkiA8ZkiEZ4kOGZEiG+JAhGZIhPmRIhmSIDxmSIRniQ4ZkSIb4kCEZkiE+FxN1QchwVsiQDO03fIQGDK3aTmf9hufSgOEMdS7Hs1+94dWEoVV7BJ9MFAgxWAFyOrkBQ5batOd6ZmArFhYBVivTRpgoLuzqVg8CxURNvi1Q23Z7CaXqWTn8YFoqFUbMZJ1d/euHHW5HlQML8CLf7EOpbMnx1tXxjk6cSEdWuzh8YEHVTTu20i+dxE4s/UnRUADHC5aqjTOyIQMzdHzpWtAkUbpZjBo6oPsJsEixeJBJwxywgCQLVZ9nTBpCTil6iteoYUO4atFecQc0PIIZwm0MoVGz06yhk4Fsz8JcjUfuIUOYiP/JHaDyPnN1Sj2aNnSc2NN09GKt8xu+ShsekY6jF2lOsJnvw/pmjFNFR7ZJC9233jkMHXFScqz9Yv0yj7MY1o6574ZsdFnQ9n+Grn8CKPM4YCg/MUMY1txPftGUBU3L8D1l2hTpLPyTdlHnlp7h0ZRhjRCc34Ms270jy4I75xysSGfv/dCkIQqz9iEK/18frt9w6CrVe2rCZqAPLys39MlwaYwxLJA3pNdDnpQZNMRupBYDho+V9+HFOZPhspA3+BsyrKxaep1Ib4/G/8Dw4Zx6hsrzzRbA5enM5Nw31JquxKY3YZvs+4YfNiV5TCWT1/iSq5PLK5tqGQKW0EvOSnInkA2tSlydSm+FL8kcIRvalYs0jaC3EJ1wR/SSX5cb80Usu2w84Yh+ShqLl6ko5Ee2JqWjVpEnvZu/H7LlOYpsIGupfVPKB9amWRifO1srNbsrPadwfwjm4vWkX+3otK1u6zke2kCNNTmqfDBhq90j69bsjNXsjfVN9MqhgwtL9+Cd8760p2leeLt5XrOyM2ARtQ9ol4F/GnS2inFt/ox8WWTrznG6sPRrXz3r96lU5pmW03sgXwns8P0SYeRzCXxeP9hY5XXqva7A9F6NVwCrOk8tw0FxySTym3ywstGmJ9gowib54jIg2L56rKUb2W97WT9S7KYBUf6aOpYVobV7/46GhW9Tx85VumhHxsrqj88WxXX7lbC1RMLDqB2Qs/wSF0UF/L5nmqoo4stpdPp0k7C1OMTyZl5g+AcP8qni13oxwAAAAABJRU5ErkJggg=="
+                                        alt="">
+                                    <input type="file" name="" id="up" hidden>
+                                </a>
+                                <progress id="prog">0%</progress>
+                                <button id="down">Download</button>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    <div class="nameContact adContent">
+                        <div class="name inter">
+                            <div class="adRight">
+                                <label for="">Name
+                                    <span class="red">*</span>
+                                </label>
+                            </div>
+                            <div class="adLeft">
+                                <input type="text" name="" id="name-ad">
+                            </div>
+                        </div>
+                        <div class="num inter">
+                            <div class="adRight">
+                                <label for="">Phone number
+                                    <span class="red">*</span>
+                                </label>
+                            </div>
+                            <div class="adLeft">
+                                <input type="text" name="" id="phoneNo-ad">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="city adContent">
+                        <div class="cityName inter">
+                            <div class="adRight">
+                                <label for="">City
+                                    <span class="red">*</span>
+                                </label>
+                            </div>
+                            <div class="adLeft">
+                                    <select class="form-control loc-bg location-ad" name="location" id="city-ad">
+                                            <option value="Karachi">Karachi</option>
+                                            <option value="Lahore">Lahore</option>
+                                            <option value="Islamabad">Islamabad</option>
+                                            <option value="Peshawar">Peshawar</option>
+                                            <option value="Quetta">Quetta</option>
+                                        </select>
+                                <!-- <input type="text" name="" id="city-ad"> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit adContent">
+                        <div class="submit inter">
+                            <div class="adRight"></div>
+                            <div class="adLeft">
+
+                                <button type="button" class="btn btn-lg btn-warning btn-ad btn-sub" id="submit-ad">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </Div>
+            </div>
+
+
+
+        </div>
+
+        <footer class="footer-basic-centered">
+
+            <!-- <p class="footer-company-motto">Created by</p> -->
+
+            <!-- <p class="footer-links">
+                <a href="#">Home</a>
+                ·
+                <a href="#">Blog</a>
+                ·
+                <a href="#">Pricing</a>
+                ·
+                <a href="#">About</a>
+                ·
+                <a href="#">Faq</a>
+                ·
+                <a href="https://www.facebook.com/nabeel.imran.12382">Connect</a>
+            </p> -->
+
+            <a href="https://www.facebook.com/nabeel.imran.12382">
+                <p class="footer-company-name">
+                    <i class="fab fa-facebook fa-2x"></i> The PaJee's &copy; 2018</p>
+            </a>
+        </footer>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        document.getElementById('upp').onclick = () => {
+            document.getElementById('up').click();
+        }
+    </script>
+
+    <script src="post.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
+</body>
+
+</html>

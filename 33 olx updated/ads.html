@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../assets/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/heart.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
+    <title id="titi">Cars</title>
+</head>
+
+<body>
+
+
+
+
+        <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAg763RIWaRYAtm79wMo9H3gmZMWNG5iPM",
+            authDomain: "fire-test-learn.firebaseapp.com",
+            databaseURL: "https://fire-test-learn.firebaseio.com",
+            projectId: "fire-test-learn",
+            storageBucket: "fire-test-learn.appspot.com",
+            messagingSenderId: "143131765238"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+    <div class="main">
+        <div class="center">
+            <div class="header">
+                <div class="icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Logo_of_OLX.svg" alt="">
+                </div>
+                <span class="heading">
+                    <span class="pk">Pakistan's</span> Largest Market place</span>
+                <div class="accnt">
+                    <button class="user-link btn btn-outline-secondary">
+                        <i class="fas fa-user"> &nbsp;</i>My account</button> &nbsp;
+                    <a href="post.html">
+                        <button type="button" class="btn btn-lg btn-warning btn-ad">Submit Ad</button>
+                    </a>
+                </div>
+                <!-- <div class="adbtn"><button type="button" class="btn btn-secondary">Submit Ad</button> -->
+                <!-- </div> -->
+            </div>
+
+
+
+
+            <div class="search">
+                <div class="row">
+                    <div class="col-4">
+                        <select class="form-control loc-bg" name="location" id="loc">
+                            <option value="">All cities</option>
+                            <option value="">Karachi</option>
+                            <option value="">Lahore</option>
+                            <option value="">Islamabad</option>
+                            <option value="">Peshawar</option>
+                            <option value="">Quetta</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" name="search" class="form-control search-bg" placeholder="Search here.." class="">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-search btn-primary">
+                            <i class="fas fa-search"></i> Search</button>
+                    </div>
+                </div>
+            </div>
+            <!-- search ended here-->
+
+
+
+
+
+            <div class="mid-ad mt-1">
+                <h1>All Ads</h1>
+
+                <ul id="ulist">
+                    <li id="1">
+                        <div class="ad-card">
+                            <div class="card-image">
+                                <img src="https://amp.businessinsider.com/images/5aabc7bbc72ac12f008b4609-1334-1001.jpg">
+                            </div>
+                            <div class="card-content">
+                                <div class="favourite" onclick="addFav(this);">
+                                    <input id="toggle1" type="checkbox" />
+                                    <label for="toggle1">
+                                        <i id="fav" class="fas fa-heart"></i>
+                                    </label>
+                                </div>
+                                <h3 class="title">lamborgini Veneno</h3>
+                                <small class="cat">&gt;&gt;Cars</small>
+                                <div class="price">Rs.
+                                    <span class="digits">50,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="2">
+                        <div class="ad-card">
+                            <div class="card-image">
+                                <img src="https://amp.businessinsider.com/images/5aabc7bbc72ac12f008b4609-1334-1001.jpg">
+                            </div>
+                            <div class="card-content">
+                                <div class="favourite" onclick="addFav(this);">
+                                    <input id="toggle2" type="checkbox" />
+                                    <label for="toggle2">
+                                        <i id="fav" class="fas fa-heart"></i>
+                                    </label>
+                                </div>
+                                <h3 class="title">lamborgini Veneno</h3>
+                                <small class="cat">&gt;&gt;Cars</small>
+                                <div class="price">Rs.
+                                    <span class="digits">50,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="3">
+                        <a onclick="setID('123')"  href="detail.html" class="aid">
+                                <div class="ad-card" >
+                                        <div class="card-image">
+                                            <img src="https://amp.businessinsider.com/images/5aabc7bbc72ac12f008b4609-1334-1001.jpg" class="adiphoto">
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="favourite" onclick="addFav(this);">
+                                                <input id="toggle3" type="checkbox" />
+                                                <label for="toggle3">
+                                                    <i id="fav" class="fas fa-heart"></i>
+                                                </label>
+                                            </div>
+                                            <h3 class="title">lamborgini Veneno</h3>
+                                            <small class="cat">&gt;&gt;Cars</small>
+                                            <div class="price">Rs.
+                                                <span class="digits">50,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+
+
+        </div>
+        <!--    centre end -->
+
+        <footer class="footer-basic-centered">
+
+            <!-- <p class="footer-company-motto">Created by</p> -->
+
+            <!-- <p class="footer-links">
+                        <a href="#">Home</a>
+                        ·
+                        <a href="#">Blog</a>
+                        ·
+                        <a href="#">Pricing</a>
+                        ·
+                        <a href="#">About</a>
+                        ·
+                        <a href="#">Faq</a>
+                        ·
+                        <a href="https://www.facebook.com/nabeel.imran.12382">Connect</a>
+                    </p> -->
+
+            <a href="https://www.facebook.com/nabeel.imran.12382">
+                <p class="footer-company-name">
+                    <i class="fab fa-facebook fa-2x"></i> The PaJee's &copy; 2018</p>
+            </a>
+        </footer>
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script src="ads.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
+</body>
+
+</html>
